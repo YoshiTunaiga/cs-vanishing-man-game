@@ -69,7 +69,7 @@ function App() {
       .join(" ");
   };
 
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ(-)".split("");
 
   const getStateMessage = () => {
     switch (gameState) {
