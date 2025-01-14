@@ -3,8 +3,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle } from "lucide-react";
 import { terms } from "@/data/keyTerms";
-import "./App.css";
 import { VanishingManSVG } from "./utils/VanishingManSVG";
+import "./App.css";
 
 function App() {
   const [currentTerm, setCurrentTerm] = useState("");
@@ -89,7 +89,7 @@ function App() {
           className={`text-center ${
             gameState === "won" ? "animate-bounce" : ""
           }`}>
-          Computer Architecture Vanishing Man
+          Computer Science Vanishing Man
         </CardTitle>
       </CardHeader>
       <CardContent>
