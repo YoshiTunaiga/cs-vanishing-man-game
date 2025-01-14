@@ -5,7 +5,7 @@ export const terms = {
     "the time it takes for a system to retrieve data from memory or storage",
   addressability:
     "the capability of a system to access and manipulate each unit of data in memory individually",
-  "arithmetic logic unit (ALU)":
+  "arithmetic logic unit":
     "the part of the CPU that performs arithmetic calculations and logical operations",
   bandwidth:
     "the maximum amount of data that can be transmitted over a network connection in a given amount of time, usually measured in bits per second (bps)",
@@ -22,7 +22,7 @@ export const terms = {
     "a small, fast type of volatile memory that stores frequently accessed data to speed up processing",
   "cable modem":
     "a device that provides internet access by connecting to a cable television line",
-  "central processing unit (CPU)":
+  "central processing unit":
     "the main component of a computer that executes instructions and processes data",
   "client/server model":
     "a network architecture where clients (user devices) request services and resources from servers (centralized computers) that provide them",
@@ -34,13 +34,13 @@ export const terms = {
     "a set of tracks located at the same position on multiple disk platters in a hard drive",
   "data transfer rate":
     "the speed at which data is transmitted between devices over a network, usually measured in bits per second (bps)",
-  "digital subscriber line (DSL)":
+  "digital subscriber line":
     "a technology that provides high-speed internet access through telephone lines",
   "domain name":
     "a human-readable address used to identify a website on the internet, such as www.example.com",
   "domain name server":
     "a server that translates domain names into IP addresses, enabling browsers to locate and load internet resources",
-  "domain name system (DNS)":
+  "domain name system":
     "the system that manages the translation of domain names to IP addresses, making it possible to access websites using human-readable names",
   "domain squatting":
     "the practice of registering domain names, especially those related to trademarks, with the intent to sell them at a profit to the rightful owner",
@@ -64,9 +64,9 @@ export const terms = {
     "a register in the CPU that holds the current instruction being executed",
   "internet backbone":
     "the main infrastructure of the internet, consisting of high-speed data transmission lines and major networks",
-  "internet protocol (IP)":
+  "internet protocol":
     "a set of rules governing the format of data sent over the internet or other networks",
-  "internet service provider (ISP)":
+  "internet service provider":
     "a company that provides individuals and organizations access to the internet",
   interoperability:
     "the ability of different systems, devices, or software to work together and exchange information seamlessly",
@@ -74,7 +74,7 @@ export const terms = {
     "a unique numerical identifier assigned to each device connected to a network, enabling it to communicate with other devices",
   latency:
     "the delay before a transfer of data begins following an instruction for its transfer",
-  "local-area network (LAN)":
+  "local area network":
     "a network that connects computers and devices within a limited area, such as a home, school, or office building",
   "metropolitan-area network (MAN)":
     "a network that spans a larger geographic area than a LAN, typically a city or a large campus",
@@ -84,8 +84,7 @@ export const terms = {
     "the main circuit board of a computer, housing the CPU, memory, and other essential components",
   "network neutrality":
     "the principle that all internet traffic should be treated equally by ISPs, without discrimination or charging differently based on user, content, or application",
-  "node (host)":
-    "any device, such as a computer or printer, connected to a network that can send, receive, or manage data",
+  node: "any device, such as a computer or printer, connected to a network that can send, receive, or manage data",
   "Open Systems Interconnection (OSI) reference model":
     "a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers to facilitate interoperability",
   "open system":
@@ -124,7 +123,7 @@ export const terms = {
     "the smallest unit of data storage on a disk, typically part of a track",
   "star topology":
     "a network configuration where all devices are connected to a central hub or switch, facilitating communication",
-  "TCP/IP":
+  "TCP IP":
     "a set of protocols that governs how data is transmitted over the internet, ensuring reliable communication",
   "top-level domain (TLD)":
     "the last part of a domain name, such as .com, .org, or .net, that identifies the domain's highest-level grouping",
@@ -134,15 +133,15 @@ export const terms = {
     "a network diagnostic tool that tracks the path data takes from one device to another, showing each step along the way",
   "transfer rate":
     "the speed at which data can be transmitted from one device to another, usually measured in bits per second",
-  "transmission control protocol (TCP)":
+  "transmission control protocol":
     "a core protocol of the internet that ensures data is delivered accurately and in the correct order",
   upload:
     "the process of sending data from a local device to a remote server or system",
-  "user datagram protocol (UDP)":
+  "user datagram protocol":
     "a communication protocol that allows data to be sent without establishing a connection, providing faster but less reliable transmission",
   "web server":
     "a computer system that hosts websites and delivers web pages to users over the internet",
-  "wide-area network (WAN)":
+  "wide-area network":
     "a network that spans a large geographic area, connecting multiple smaller networks, such as LANs, typically using long-distance communication links",
   wireless:
     "a method of transmitting data without physical connections, using radio waves or other technologies",
