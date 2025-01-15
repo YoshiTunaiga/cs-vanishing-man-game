@@ -1,6 +1,6 @@
 export const terms = {
   "analog data": "data represented in a continuous and variable form",
-  "American Standard Code for Information Interchange (ASCII)":
+  "American Standard Code for Information Interchange":
     "a standard encoding system for text characters that uses numeric values to represent letters, numbers, and symbols",
   ASCII:
     "a standard encoding system for text characters that uses numeric values to represent letters, numbers, and symbols",
@@ -263,7 +263,7 @@ export const terms = {
     "malicious software; refers to any software designed to harm, exploit, or otherwise compromise the operation of computers, networks, or devices",
   patent:
     "a legal right granted to an inventor giving them exclusive control over the use and commercialization of their invention for a specific period",
-  "peer-to-peer networks":
+  "peer to peer networks":
     "a decentralized network where each participant (peer) has equal privileges and can directly share resources, such as files, with other peers without needing a central server",
   piracy:
     "the unauthorized use, reproduction, or distribution of copyrighted materials, such as software, music, movies, and books",
@@ -375,7 +375,7 @@ export const terms = {
     "a simple display and input device with no processing power relying on a central computer for computing tasks",
   "dynamic partition technique":
     "a memory management method where memory is divided into variable-sized partitions based on the needs of processes",
-  "first come, first-served":
+  "first come, first served":
     "a CPU scheduling algorithm that processes requests in the order they arrive without priority",
   FCFS: "a CPU scheduling algorithm that processes requests in the order they arrive without priority",
   "fixed partition technique":
@@ -478,14 +478,16 @@ export const terms = {
     "the time it takes for a system to retrieve data from memory or storage",
   addressability:
     "the capability of a system to access and manipulate each unit of data in memory individually",
-  "arithmetic logic unit (ALU)":
+  "arithmetic logic unit":
     "the part of the CPU that performs arithmetic calculations and logical operations",
+  ALU: "the part of the CPU that performs arithmetic calculations and logical operations",
   "bus width":
     "the number of bits that can be transmitted simultaneously on a data bus, affecting data transfer speed",
   "cache memory":
     "a small, fast type of volatile memory that stores frequently accessed data to speed up processing",
-  "central processing unit (CPU)":
+  "central processing unit":
     "the main component of a computer that executes instructions and processes data",
+  CPU: "the main component of a computer that executes instructions and processes data",
   "control unit":
     "the part of the CPU that directs its operation, managing the execution of instructions and coordinating other components",
   cylinder:
