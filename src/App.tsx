@@ -7,6 +7,7 @@ import { VanishingManSVG } from "./utils/VanishingManSVG";
 import "./App.css";
 
 function App() {
+  const termLength = Object.keys(terms).length;
   const [currentTerm, setCurrentTerm] = useState("");
   const [definition, setDefinition] = useState("");
   const [guessedLetters, setGuessedLetters] = useState(new Set());
@@ -117,7 +118,9 @@ function App() {
               } ${gameState === "lost" ? "text-red-500" : ""}`}>
               {getStateMessage()}
             </p>
-            <p className="text-sm">Score: {score}</p>
+            <p className="text-sm">
+              Score: {score} from {termLength} terms
+            </p>
           </div>
 
           <div className="grid grid-cols-7 gap-2">
@@ -154,7 +157,7 @@ function App() {
 
           <div className="text-center text-sm text-gray-500">
             <AlertCircle className="inline-block mr-1 h-4 w-4" />
-            Guess the computer architecture term based on the definition!
+            Guess the computer science term based on the hint definition!
           </div>
         </div>
       </CardContent>
