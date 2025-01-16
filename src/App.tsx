@@ -5,9 +5,11 @@ import { AlertCircle } from "lucide-react";
 import { terms } from "@/data/keyTerms";
 import { VanishingManSVG } from "./utils/VanishingManSVG";
 import "./App.css";
+import { WelcomeSection } from "./components/WelcomeSection";
 
 function App() {
   const termLength = Object.keys(terms).length;
+  const [newGame, setNewGame] = useState(true);
   const [currentTerm, setCurrentTerm] = useState("");
   const [definition, setDefinition] = useState("");
   const [guessedLetters, setGuessedLetters] = useState(new Set());
@@ -94,45 +96,46 @@ function App() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-6">
-          <div
-            className={`transition-all duration-300 ${
-              wrongGuessAnimation ? "scale-105 text-red-500" : ""
-            } ${correctGuessAnimation ? "scale-105 text-green-500" : ""}`}>
-            <VanishingManSVG remainingGuesses={remainingGuesses} />
-          </div>
+        {!newGame ? (
+          <div className="space-y-6">
+            <div
+              className={`transition-all duration-300 ${
+                wrongGuessAnimation ? "scale-105 text-red-500" : ""
+              } ${correctGuessAnimation ? "scale-105 text-green-500" : ""}`}>
+              <VanishingManSVG remainingGuesses={remainingGuesses} />
+            </div>
 
-          <div className="text-center">
-            <p
-              className={`text-2xl font-mono mb-4 transition-all duration-300 ${
-                correctGuessAnimation ? "scale-105 text-green-500" : ""
-              }`}>
-              {displayWord()}
-            </p>
-            <p className="text-sm italic mb-4 hover:text-blue-500 transition-colors duration-300">
-              Hint: {definition}
-            </p>
-            <p
-              className={`text-lg font-semibold ${
-                gameState === "won" ? "text-green-500" : ""
-              } ${gameState === "lost" ? "text-red-500" : ""}`}>
-              {getStateMessage()}
-            </p>
-            <p className="text-sm">
-              Score: {score} from {termLength} terms
-            </p>
-          </div>
+            <div className="text-center">
+              <p
+                className={`text-2xl font-mono mb-4 transition-all duration-300 ${
+                  correctGuessAnimation ? "scale-105 text-green-500" : ""
+                }`}>
+                {displayWord()}
+              </p>
+              <p className="text-sm italic mb-4 hover:text-blue-500 transition-colors duration-300">
+                Hint: {definition}
+              </p>
+              <p
+                className={`text-lg font-semibold ${
+                  gameState === "won" ? "text-green-500" : ""
+                } ${gameState === "lost" ? "text-red-500" : ""}`}>
+                {getStateMessage()}
+              </p>
+              <p className="text-sm">
+                Score: {score} from {termLength} terms
+              </p>
+            </div>
 
-          <div className="grid grid-cols-7 gap-2">
-            {alphabet.map((letter) => (
-              <Button
-                key={letter}
-                onClick={() => handleGuess(letter)}
-                disabled={
-                  guessedLetters.has(letter.toLowerCase()) ||
-                  gameState !== "playing"
-                }
-                className={`w-full transition-all duration-300 transform hover:scale-105 
+            <div className="grid grid-cols-7 gap-2">
+              {alphabet.map((letter) => (
+                <Button
+                  key={letter}
+                  onClick={() => handleGuess(letter)}
+                  disabled={
+                    guessedLetters.has(letter.toLowerCase()) ||
+                    gameState !== "playing"
+                  }
+                  className={`w-full transition-all duration-300 transform hover:scale-105 
                   ${
                     guessedLetters.has(letter.toLowerCase())
                       ? currentTerm.toLowerCase().includes(letter.toLowerCase())
@@ -140,26 +143,34 @@ function App() {
                         : "bg-red-500 hover:bg-red-600"
                       : ""
                   }`}>
-                {letter}
-              </Button>
-            ))}
-          </div>
-
-          {gameState !== "playing" && (
-            <div className="text-center">
-              <Button
-                onClick={initializeGame}
-                className="mt-4 animate-bounce hover:scale-105 transition-transform duration-300">
-                Play Again
-              </Button>
+                  {letter}
+                </Button>
+              ))}
             </div>
-          )}
 
-          <div className="text-center text-sm text-gray-500">
-            <AlertCircle className="inline-block mr-1 h-4 w-4" />
-            Guess the computer science term based on the hint definition!
+            {gameState !== "playing" && (
+              <div className="text-center">
+                <Button
+                  onClick={initializeGame}
+                  className="mt-4 animate-bounce hover:scale-105 transition-transform duration-300">
+                  Play Again
+                </Button>
+              </div>
+            )}
+
+            <div className="text-center text-sm text-gray-500">
+              <AlertCircle className="inline-block mr-1 h-4 w-4" />
+              Guess the computer science term based on the hint definitions!
+            </div>
           </div>
-        </div>
+        ) : (
+          <WelcomeSection
+            initializeNewGame={() => {
+              initializeGame();
+              setNewGame(!newGame);
+            }}
+          />
+        )}
       </CardContent>
     </Card>
   );

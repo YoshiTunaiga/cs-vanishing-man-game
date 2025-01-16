@@ -52,7 +52,7 @@ export const terms = {
     "a simple compression technique that replaces sequences of repeated characters with a single character and a count",
   "scientific notation":
     "a method of representing very large or very small numbers by using powers of 10",
-  "signed magnitude representation":
+  "signed magnitude representation":
     "a way of encoding positive and negative numbers where one bit represents the sign and the remaining bits represent the magnitude",
   string:
     "a sequence of characters treated as a single data element and used for text manipulation",
@@ -582,7 +582,7 @@ export const terms = {
   host: "any device, such as a computer or printer, connected to a network that can send, receive, or manage data",
   "Open Systems Interconnection reference model":
     "a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers to facilitate interoperability",
-  "OSI reference model":
+  "OSI reference model":
     "a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers to facilitate interoperability",
   "open system":
     "a system that uses open standards and protocols, allowing it to interact with other systems and be modified or extended by third parties",
