@@ -54,6 +54,8 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to view the 
 
 # 🔋 <a name="features">Features</a>
 
+- Guess a hidden computer science term using a hint definition.
+
 # 🚀 <a name="next-steps">Next Steps</a>
 
 - [ ] **Update terms that contain multiple words:** These terms have to be separated by space to indicate that this is a multiple word term.
