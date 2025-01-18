@@ -54,6 +54,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to view the 
 
 # 🔋 <a name="features">Features</a>
 
+# 🚀 <a name="next-steps">Next Steps</a>
+
+- [ ] **Update terms that contain multiple words:** These terms have to be separated by space to indicate that this is a multiple word term.
+- [ ] **Guessed terms bottom pop up:** The words that the user guessed should appear at the bottom as mini cards where on click they flip to display the definition.
+- [ ] **Record Username and Last Score:** These can be then display on the welcome page as the top 3 highest guessed score. Example: packman game machines scores.
+
 # ➕ <a name="more">More</a>
 
 ## React + TypeScript + Vite

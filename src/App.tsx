@@ -20,7 +20,7 @@ function App() {
   const [correctGuessAnimation, setCorrectGuessAnimation] = useState(false);
 
   const initializeGame = () => {
-    const termsList = Object.keys(terms) as Array<keyof typeof terms>;
+    const termsList = Object.keys(terms) as (keyof typeof terms)[];
     const randomTerm = termsList[Math.floor(Math.random() * termsList.length)];
     setCurrentTerm(randomTerm);
     setDefinition(terms[randomTerm]);
