@@ -63,13 +63,22 @@ function App() {
   };
 
   const displayWord = () => {
-    return currentTerm
-      .split("")
-      .map((char) => {
-        if (char === " ") return " ";
-        return guessedLetters.has(char.toLowerCase()) ? char : "_";
-      })
-      .join(" ");
+    const words = currentTerm.split(" ");
+    // Displays the term with multiple words vertically to avoid confusion for the user.
+    return (
+      <div className="flex flex-col items-center space-y-2">
+        {words.map((word, index) => (
+          <p key={index} className="font-mono">
+            {word
+              .split("")
+              .map((char) =>
+                guessedLetters.has(char.toLowerCase()) ? char : "_"
+              )
+              .join(" ")}
+          </p>
+        ))}
+      </div>
+    );
   };
 
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -106,12 +115,12 @@ function App() {
             </div>
 
             <div className="text-center">
-              <p
-                className={`text-2xl font-mono mb-4 transition-all duration-300 ${
+              <div
+                className={`text-2xl mb-4 transition-all duration-300 ${
                   correctGuessAnimation ? "scale-105 text-green-500" : ""
                 }`}>
                 {displayWord()}
-              </p>
+              </div>
               <p className="text-sm italic mb-4 hover:text-blue-500 transition-colors duration-300">
                 Hint: {definition}
               </p>
