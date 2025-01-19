@@ -6,6 +6,7 @@ import { terms } from "@/data/keyTerms";
 import { VanishingManSVG } from "./utils/VanishingManSVG";
 import "./App.css";
 import { WelcomeSection } from "./components/WelcomeSection";
+import FlipCard from "./components/FlipCard";
 
 function App() {
   const termLength = Object.keys(terms).length;
@@ -18,6 +19,10 @@ function App() {
   const [score, setScore] = useState(0);
   const [wrongGuessAnimation, setWrongGuessAnimation] = useState(false);
   const [correctGuessAnimation, setCorrectGuessAnimation] = useState(false);
+  const [guessedWords, setGuessedWords] = useState<
+    { term: string; definition: string }[]
+  >([]);
+  const [showNewWordAnimation, setShowNewWordAnimation] = useState(false);
 
   const initializeGame = () => {
     const termsList = Object.keys(terms) as (keyof typeof terms)[];
@@ -57,6 +62,11 @@ function App() {
     if (isWon) {
       setGameState("won");
       setScore(score + 1);
+      setGuessedWords((prev) => [
+        ...prev,
+        { term: currentTerm, definition: definition },
+      ]);
+      setShowNewWordAnimation(true);
     } else if (remainingGuesses <= 1) {
       setGameState("lost");
     }
@@ -164,6 +174,28 @@ function App() {
                   className="mt-4 animate-bounce hover:scale-105 transition-transform duration-300">
                   Play Again
                 </Button>
+              </div>
+            )}
+
+            {guessedWords.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-center font-semibold mb-4">
+                  Guessed Words
+                </h3>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  {guessedWords.map((word, index) => (
+                    <div
+                      key={index}
+                      className={`transition-all duration-500 ${
+                        showNewWordAnimation &&
+                        index === guessedWords.length - 1
+                          ? "animate-slide-up-fade"
+                          : ""
+                      }`}>
+                      <FlipCard term={word.term} definition={word.definition} />
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
