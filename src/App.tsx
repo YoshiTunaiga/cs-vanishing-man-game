@@ -1,15 +1,22 @@
 import { useState, useEffect } from "react";
+import { AlertCircle } from "lucide-react";
+
+// Components
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle } from "lucide-react";
-import { terms } from "@/data/keyTerms";
-import { VanishingManSVG } from "./utils/VanishingManSVG";
-import "./App.css";
 import { WelcomeSection } from "./components/WelcomeSection";
 import FlipCard from "./components/FlipCard";
+import { VanishingManSVG } from "./utils/VanishingManSVG";
+
+// Data
+import { terms } from "@/data/keyTerms";
+
+// Styles
+import "./App.css";
 
 function App() {
   const termLength = Object.keys(terms).length;
+  const [termsList, setTermsList] = useState<(keyof typeof terms)[]>([]);
   const [newGame, setNewGame] = useState(true);
   const [currentTerm, setCurrentTerm] = useState("");
   const [definition, setDefinition] = useState("");
@@ -25,18 +32,22 @@ function App() {
   const [showNewWordAnimation, setShowNewWordAnimation] = useState(false);
 
   const initializeGame = () => {
-    const termsList = Object.keys(terms) as (keyof typeof terms)[];
-    const randomTerm = termsList[Math.floor(Math.random() * termsList.length)];
+    const randomTerm = termsList.pop() || "";
     setCurrentTerm(randomTerm);
-    setDefinition(terms[randomTerm]);
+    setDefinition(terms[randomTerm as keyof typeof terms]);
     setGuessedLetters(new Set());
     setRemainingGuesses(6);
     setGameState("playing");
   };
 
   useEffect(() => {
+    if (termsList.length === 0) {
+      const termsList = Object.keys(terms) as (keyof typeof terms)[];
+      setTermsList(termsList);
+    }
     initializeGame();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [termsList]);
 
   const handleGuess = (letter: string) => {
     if (gameState !== "playing") return;
@@ -67,7 +78,7 @@ function App() {
         { term: currentTerm, definition: definition },
       ]);
       setShowNewWordAnimation(true);
-    } else if (remainingGuesses <= 1) {
+    } else if (remainingGuesses < 1) {
       setGameState("lost");
     }
   };
