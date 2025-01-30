@@ -1,4 +1,4 @@
-export const terms = {
+export const csKeyTerms = {
   "analog data": "data represented in a continuous and variable form",
   "American Standard Code for Information Interchange":
     "a standard encoding system for text characters that uses numeric values to represent letters, numbers, and symbols",
